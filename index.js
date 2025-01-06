@@ -30,19 +30,18 @@ app.post("/add-todo", (req, res) => {
   res.send({ message: "Todo added successfully", data: addTodo });
 });
 
-let fountTodo = null;
 app.get("/delete-todo/:id", (req, res) => {
   const id = Number(req.params.id);
   let isFound = false;
   for (let i = 0; i < todos.length; i++) {
     if (todos[i].id === id) {
-      fountTodo = todos[i];
+      todos.splice(i, 1);
       isFound = true;
       break;
     }
   }
   if (isFound) {
-    res.send({ message: "Todo found successfully", data: fountTodo });
+    res.status(201).send({ message: "Todo delete successfully" });
   } else {
     res.status(200).send({ data: null, message: "todo not found" });
   }
