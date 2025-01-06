@@ -32,7 +32,7 @@ app.post("/add-todo", (req, res) => {
 });
 
 let fountTodo = null;
-app.get("/get-todo/:id", (req, res) => {
+app.get("/delete-todo/:id", (req, res) => {
   const id = Number(req.params.id);
   let isFound = false;
   for (let i = 0; i < todos.length; i++) {
@@ -49,9 +49,9 @@ app.get("/get-todo/:id", (req, res) => {
   }
 });
 
-app.delete("/delete-todo/:id", (req, res) => {
-  res.send("Todo deleted successfully");
-});
+// app.delete("/delete-todo/:id", (req, res) => {
+//   res.send("Todo deleted successfully");
+// });
 
 app.patch("/edit-todo/:id", (req, res) => {
   const id = req.params.id;
