@@ -70,7 +70,6 @@ app.patch("/edit-todo/:id", (req, res) => {
   } else {
     res.status(200).send({ data: null, message: "todo not found" });
   }
-  // res.send("Todo edited successfully" + id);
 });
 
 app.listen(PORT, () => {
