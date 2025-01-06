@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
+<<<<<<< HEAD
 app.use(
   cors({
     origin: [
@@ -10,6 +11,12 @@ app.use(
     ],
   })
 );
+=======
+app.use(cors({ origin: [
+      "http://localhost:5174",
+      "https://todo-with-backend-three.vercel.app",
+    ], }));
+>>>>>>> b3b9f00b2a0ecb8c8e3e7b9fa1a8c6136ddd3e1a
 
 const PORT = 3000;
 
