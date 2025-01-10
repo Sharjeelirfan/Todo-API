@@ -5,7 +5,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:5174",
+      "http://localhost:5173",
       "https://todo-with-backend-three.vercel.app",
     ],
   })
@@ -30,7 +30,7 @@ app.post("/add-todo", (req, res) => {
   res.send({ message: "Todo added successfully", data: addTodo });
 });
 
-app.get("/delete-todo/:id", (req, res) => {
+app.delete("/delete-todo/:id", (req, res) => {
   const id = Number(req.params.id);
   let isFound = false;
   for (let i = 0; i < todos.length; i++) {
